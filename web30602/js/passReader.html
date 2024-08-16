@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = window.prompt("이름을 입력하세요", "로봇")
+        let score = window.prompt("점수를 입력하세요.")
+        if(isNaN(score)) window.alert("점수는 숫자를 입력하세요");
+        else if(score >= 80) document.write(`<h1>합격</h1>${name}님 축하합니다. 점수 : ${score} 점`)
+        else document.write(`<h1>불합격</h1>${name}님 노력해봅시다. 점수 : ${score} 점`)
+    </script>
+</body>
+</html>
