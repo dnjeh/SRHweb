@@ -17,18 +17,18 @@
 </head>
 <body>
     <script>
-        let memNum = parseInt(prompt("입장객은 몇 명 인가요?"));
-        let colNum = parseInt(prompt("한 줄에 몇 명이 앉습니까?"));
-        document.write("<table>");
-        document.write("<caption><h1>자리 배치도</h1></caption>")
-        for(let i=0;i<Math.floor(memNum/colNum)+(memNum%colNum?1:0);i++) {
-            document.write("<tr>");
-            for(let j=0;j<colNum&&(i*colNum+j<memNum);j++) {
-                console.log(i, j);
-                document.write(`<td>좌석 ${i*colNum+j+1}</td>`);
+        let num = parseInt(prompt("입장객은 몇 명인가요?"));
+        let col = parseInt(prompt("한 줄에 몇 명씩 앉습니까?"));
+        document.write(`<table><caption><h1>자리 배치도</h1><caption>`);
+        for(let i=0;i<Math.ceil(num/col);i++) {
+            document.write(`<tr>`);
+            for(let j=0;j<col&&i*col+j+1<=num;j++) {
+                let t = i*col+j+1;
+                document.write(`<td>좌석 ${t}</td>`);
             }
-            document.write("</tr>");
+            document.write(`</tr>`);
         }
+        document.write(`</table>`);
     </script>
 </body>
 </html>
