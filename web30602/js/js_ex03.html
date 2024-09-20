@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <caption><h2>JS 간단 계산기</h2></caption>
+        <tr>
+            <th>숫자 1</th>
+            <td><input type="text" id="num1" size="10"></td>
+        </tr>
+        <tr>
+            <th>숫자 2</th>
+            <td><input type="text" id="num2" size="10"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="button" value="+" onclick="cal('+')">
+                <input type="button" value="-" onclick="cal('-')">
+                <input type="button" value="*" onclick="cal('*')">
+                <input type="button" value="/" onclick="cal('/')">
+            </th>
+        </tr>
+        <tr>
+            <th>계산 결과</th>
+            <td><input type="text" id="result" size="10"></td>
+        </tr>
+    </table>
+    <script>
+        function cal(op="*") {
+            let a = parseInt(document.querySelector("#num1").value);
+            let b = parseInt(document.querySelector("#num2").value);
+            let ret;
+            switch(op) {
+                case '+':
+                    ret = a+b
+                    break
+                case '-':
+                    ret = a-b
+                    break
+                case '*':
+                    ret = a*b
+                    break
+                case '/':
+                    ret = a/b
+                    break
+            }
+            document.querySelector("#result").value=ret;
+        }
+    </script>
+</body>
+</html>

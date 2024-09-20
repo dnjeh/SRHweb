@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="textCon();">textContent로 표시하기</button>
+    <button onclick="innHTML();">innerHTML로 표시하기</button>
+    <h1>현재 시각: </h1>
+    <div id="current"></div>
+    <script>
+        const a = document.querySelector("#current");
+        let now = new Date();
+        const text = `<b>${now}</b>`
+        function textCon() {
+            a.textContent = text;
+        }
+        function innHTML() {
+            a.innerHTML = text;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{text-align: center;}
+    </style>
+</head>
+<body>
+    <body>
+        <div id="galleryZone">
+            <p><img src="image/mov01.jpg" id="photo" alt=""></p>
+            <p>
+                <button onclick="gallery(0)">이전</button>
+                <button onclick="gallery(1)">다음</button>
+            </p>
+        </div>
+    </body>
+    <script>
+        let imgTag = document.querySelector("#photo");
+        let now = 1
+        let temp = ""
+        function gallery(pos) {
+            if(pos===0) {
+                if(now===1) {
+                    alert("처음 입니다!!")
+                    return
+                }
+                else temp=`image/mov0${--now}.jpg`
+            }
+            else if(pos===1) {
+                if(now===8) {
+                    alert("마지막 입니다!!")
+                    return
+                }
+                else temp=`image/mov0${++now}.jpg`
+            }
+            imgTag.setAttribute("src", temp)
+        }
+
+    </script>
+</body>
+</html>
